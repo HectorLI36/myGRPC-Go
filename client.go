@@ -8,14 +8,14 @@ import (
 )
 
 func main() {
-	conn, err := grpc.Dial(":8972", grpc.WithInsecure())
+	conn, err := grpc.Dial("localhost:8972", grpc.WithInsecure())
 	if err != nil {
 		fmt.Println("Dial error: %v", err)
 	}
 	defer conn.Close()
 	client := pb.NewSliceServerClient(conn)
 	reply, err := client.GetSlice(context.Background(), &pb.SliceRequest{
-		BookId:       1,
+		BookId:       8768,
 		Offset:       2,
 		SlicePerPage: 3,
 	})

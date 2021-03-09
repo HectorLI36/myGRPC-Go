@@ -2,11 +2,7 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
 	pb "myGRPC/pb"
-	"net"
 	"strconv"
 )
 
@@ -39,4 +35,18 @@ func main() {
 	if err != nil {
 		fmt.Printf("failed to serve: %v", err)
 	}
+
+	// --------------------------
+	//lis, err := net.Listen("tcp", ":8972")
+	//if err != nil {
+	//	fmt.Print(err)
+	//}
+	//
+	//s := grpc.NewServer()
+	//pb.RegisterSliceServerServer(s, &server{})
+	//err = s.Serve(lis)
+	//if err != nil {
+	//	log.Fatal("failed to serve: %v", err)
+	//}
+
 }
