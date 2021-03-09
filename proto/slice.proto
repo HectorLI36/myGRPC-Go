@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+service SliceServer {
+  rpc GetSlice (SliceRequest) returns (SliceResponse);
+}
+
+message SliceResponse {
+  string content = 1;
+  string title = 2;
+  int32 slice_number = 3;
+  int32 slice_per_page = 4;
+  int32 offset = 5;
+  int32 book_id = 6;
+}
+
+message SliceRequest {
+  int32 book_id = 1;
+  int32 offset = 2;
+  int32 slice_per_page = 3;
+}
+
+// later
+//message InfoRequest {
+//
+//}
